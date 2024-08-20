@@ -1,0 +1,20 @@
+{
+  "name": "playright",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {"test": "npx playwright test"},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.46.0",
+    "@types/node": "^22.3.0"
+  },
+  "dependencies": {
+    "npm": "^10.8.2"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "description": ""
+}
