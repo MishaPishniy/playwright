@@ -1,5 +1,6 @@
 // @ts-check
 const { defineConfig, devices } = require('@playwright/test');
+require('dotenv').config();
 
 module.exports = defineConfig({
   testDir: './e2e',
@@ -17,14 +18,14 @@ module.exports = defineConfig({
   projects: [
     {
       name: 'qauto',
-      testMatch: '**.qauto.spec.js',
+      testMatch: '**.qauto.spec.ts',
       use: {
         headless: false,
-        baseURL: 'https://qauto.forstudy.space/',
+        baseURL: process.env.BASE_URL,
         httpCredentials: {
-          username: 'guest',
-          password: 'welcome2qauto'
-        }
+          username: process.env.USER_NAME || 'defaultUsername',
+          password: process.env.USER_PASS || 'defaultPassword',
+        },
       }
     },
 
@@ -38,4 +39,3 @@ module.exports = defineConfig({
       use: { ...devices['Desktop Safari'] , headless: true},
     },]
 });
-

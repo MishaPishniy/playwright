@@ -2,15 +2,23 @@
   "name": "playright",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {"test": "npx playwright test"},
+  "scripts": {
+    "test": "npx playwright test",
+    "test:ui": "npx playwright test --ui",
+    "debug": "npx playwright test --debug",
+    "list": "npx playwright test --list",
+    "test:qa": "set TEST_ENV = QA && npx playwright test",
+    "test:stage": "set TEST_ENV = Stage && npx playwright test --list"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.46.0",
-    "@types/node": "^22.3.0"
+    "@types/node": "^22.5.4"
   },
   "dependencies": {
+    "dotenv": "^16.4.5",
     "npm": "^10.8.2"
   },
   "directories": {
