@@ -1,0 +1,882 @@
+{
+  "config": {
+    "configFile": "C:\\Playright\\playwright.config.js",
+    "rootDir": "C:/Playright/e2e",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 6
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "json",
+        {
+          "fileName": "result.json"
+        }
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "result.xml"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 15000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "C:/Playright/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "qauto",
+        "name": "qauto",
+        "testDir": "C:/Playright/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**.qauto.spec.js"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "C:/Playright/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "C:/Playright/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "version": "1.46.0",
+    "workers": 6,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "first.qauto.spec.js",
+      "file": "first.qauto.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "has title",
+          "ok": false,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "qauto",
+              "projectName": "qauto",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "failed",
+                  "duration": 7828,
+                  "error": {
+                    "message": "Error: locator.fill: Error: strict mode violation: locator('.modal-content').locator('input[name=\"email\"]') resolved to 2 elements:\n    1) <input type=\"text\" name=\"email\" id=\"signinEmail\" _ngcontent-oam-c51=\"\" formcontrolname=\"email\" class=\"form-control ng-untouched ng-pristine ng-invalid\"/> aka locator('#signinEmail')\n    2) <input type=\"text\" name=\"email\" id=\"signupEmail\" _ngcontent-oam-c47=\"\" formcontrolname=\"email\" class=\"form-control ng-untouched ng-pristine ng-invalid\"/> aka getByLabel('Name')\n\nCall log:\n  \u001b[2m- waiting for locator('.modal-content').locator('input[name=\"email\"]')\u001b[22m\n",
+                    "stack": "Error: locator.fill: Error: strict mode violation: locator('.modal-content').locator('input[name=\"email\"]') resolved to 2 elements:\n    1) <input type=\"text\" name=\"email\" id=\"signinEmail\" _ngcontent-oam-c51=\"\" formcontrolname=\"email\" class=\"form-control ng-untouched ng-pristine ng-invalid\"/> aka locator('#signinEmail')\n    2) <input type=\"text\" name=\"email\" id=\"signupEmail\" _ngcontent-oam-c47=\"\" formcontrolname=\"email\" class=\"form-control ng-untouched ng-pristine ng-invalid\"/> aka getByLabel('Name')\n\nCall log:\n  \u001b[2m- waiting for locator('.modal-content').locator('input[name=\"email\"]')\u001b[22m\n\n    at C:\\Playright\\e2e\\first.qauto.spec.js:17:20",
+                    "location": {
+                      "file": "C:\\Playright\\e2e\\first.qauto.spec.js",
+                      "column": 20,
+                      "line": 17
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 15 |\u001b[39m   \u001b[36mawait\u001b[39m firstNameInput\u001b[33m.\u001b[39mfill(\u001b[32m'Jhon'\u001b[39m)\n \u001b[90m 16 |\u001b[39m   \u001b[36mawait\u001b[39m lastNameInput\u001b[33m.\u001b[39mpressSequentially(\u001b[32m'asdfghj'\u001b[39m)\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 17 |\u001b[39m   \u001b[36mawait\u001b[39m emailInput\u001b[33m.\u001b[39mfill(\u001b[32m'test.@test.com'\u001b[39m)\n \u001b[90m    |\u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 18 |\u001b[39m\n \u001b[90m 19 |\u001b[39m   \u001b[36mawait\u001b[39m emailInput\u001b[33m.\u001b[39mblur()\n \u001b[90m 20 |\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Playright\\e2e\\first.qauto.spec.js",
+                        "column": 20,
+                        "line": 17
+                      },
+                      "message": "Error: locator.fill: Error: strict mode violation: locator('.modal-content').locator('input[name=\"email\"]') resolved to 2 elements:\n    1) <input type=\"text\" name=\"email\" id=\"signinEmail\" _ngcontent-oam-c51=\"\" formcontrolname=\"email\" class=\"form-control ng-untouched ng-pristine ng-invalid\"/> aka locator('#signinEmail')\n    2) <input type=\"text\" name=\"email\" id=\"signupEmail\" _ngcontent-oam-c47=\"\" formcontrolname=\"email\" class=\"form-control ng-untouched ng-pristine ng-invalid\"/> aka getByLabel('Name')\n\nCall log:\n  \u001b[2m- waiting for locator('.modal-content').locator('input[name=\"email\"]')\u001b[22m\n\n\n\u001b[0m \u001b[90m 15 |\u001b[39m   \u001b[36mawait\u001b[39m firstNameInput\u001b[33m.\u001b[39mfill(\u001b[32m'Jhon'\u001b[39m)\n \u001b[90m 16 |\u001b[39m   \u001b[36mawait\u001b[39m lastNameInput\u001b[33m.\u001b[39mpressSequentially(\u001b[32m'asdfghj'\u001b[39m)\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 17 |\u001b[39m   \u001b[36mawait\u001b[39m emailInput\u001b[33m.\u001b[39mfill(\u001b[32m'test.@test.com'\u001b[39m)\n \u001b[90m    |\u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 18 |\u001b[39m\n \u001b[90m 19 |\u001b[39m   \u001b[36mawait\u001b[39m emailInput\u001b[33m.\u001b[39mblur()\n \u001b[90m 20 |\u001b[39m\u001b[0m\n\n\u001b[2m    at C:\\Playright\\e2e\\first.qauto.spec.js:17:20\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2024-09-06T16:31:53.145Z",
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Playright\\test-results\\first.qauto-has-title-qauto\\test-failed-1.png"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Playright\\e2e\\first.qauto.spec.js",
+                    "column": 20,
+                    "line": 17
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "c718e60d19c5300a64eb-3098adeab5884444a79b",
+          "file": "first.qauto.spec.js",
+          "line": 3,
+          "column": 5
+        },
+        {
+          "title": "check registration modal",
+          "ok": false,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "qauto",
+              "projectName": "qauto",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "status": "failed",
+                  "duration": 12442,
+                  "error": {
+                    "message": "Error: First name input visible\n\n\u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: locator('.modal-content').locator('#signupNam')\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n  \u001b[2m- First name input visible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.modal-content').locator('#signupNam')\u001b[22m\n",
+                    "stack": "Error: First name input visible\n\n\u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: locator('.modal-content').locator('#signupNam')\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n  \u001b[2m- First name input visible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.modal-content').locator('#signupNam')\u001b[22m\n\n    at C:\\Playright\\e2e\\first.qauto.spec.js:38:65",
+                    "location": {
+                      "file": "C:\\Playright\\e2e\\first.qauto.spec.js",
+                      "column": 65,
+                      "line": 38
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 36 |\u001b[39m   \n \u001b[90m 37 |\u001b[39m   \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39msoft(lastNameInput\u001b[33m,\u001b[39m \u001b[32m'Last name input visible'\u001b[39m)\u001b[33m.\u001b[39mtoBeVisible()\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 38 |\u001b[39m   \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39msoft(firstNameInput\u001b[33m,\u001b[39m \u001b[32m'First name input visible'\u001b[39m)\u001b[33m.\u001b[39mtoBeVisible()\n \u001b[90m    |\u001b[39m                                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 39 |\u001b[39m   \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39msoft(emailInput\u001b[33m,\u001b[39m \u001b[32m'Email input visible'\u001b[39m)\u001b[33m.\u001b[39mtoBeVisible()\n \u001b[90m 40 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 41 |\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Playright\\e2e\\first.qauto.spec.js",
+                        "column": 65,
+                        "line": 38
+                      },
+                      "message": "Error: First name input visible\n\n\u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: locator('.modal-content').locator('#signupNam')\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n  \u001b[2m- First name input visible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.modal-content').locator('#signupNam')\u001b[22m\n\n\n\u001b[0m \u001b[90m 36 |\u001b[39m   \n \u001b[90m 37 |\u001b[39m   \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39msoft(lastNameInput\u001b[33m,\u001b[39m \u001b[32m'Last name input visible'\u001b[39m)\u001b[33m.\u001b[39mtoBeVisible()\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 38 |\u001b[39m   \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39msoft(firstNameInput\u001b[33m,\u001b[39m \u001b[32m'First name input visible'\u001b[39m)\u001b[33m.\u001b[39mtoBeVisible()\n \u001b[90m    |\u001b[39m                                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 39 |\u001b[39m   \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39msoft(emailInput\u001b[33m,\u001b[39m \u001b[32m'Email input visible'\u001b[39m)\u001b[33m.\u001b[39mtoBeVisible()\n \u001b[90m 40 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 41 |\u001b[39m\u001b[0m\n\n\u001b[2m    at C:\\Playright\\e2e\\first.qauto.spec.js:38:65\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2024-09-06T16:31:53.145Z",
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Playright\\test-results\\first.qauto-check-registration-modal-qauto\\test-failed-1.png"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Playright\\e2e\\first.qauto.spec.js",
+                    "column": 65,
+                    "line": 38
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "c718e60d19c5300a64eb-a97d6f68dd85633f14c8",
+          "file": "first.qauto.spec.js",
+          "line": 24,
+          "column": 5
+        },
+        {
+          "title": "check buttons",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "qauto",
+              "projectName": "qauto",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "status": "failed",
+                  "duration": 12471,
+                  "error": {
+                    "message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nLocator: locator('.header').getByRole('button')\nExpected: \u001b[32m3\u001b[39m\nReceived: \u001b[31m4\u001b[39m\nCall log:\n  \u001b[2m- expect.soft.toHaveCount with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.header').getByRole('button')\u001b[22m\n\u001b[2m  -   locator resolved to 4 elements\u001b[22m\n\u001b[2m  -   unexpected value \"4\"\u001b[22m\n\u001b[2m  -   locator resolved to 4 elements\u001b[22m\n\u001b[2m  -   unexpected value \"4\"\u001b[22m\n\u001b[2m  -   locator resolved to 4 elements\u001b[22m\n\u001b[2m  -   unexpected value \"4\"\u001b[22m\n\u001b[2m  -   locator resolved to 4 elements\u001b[22m\n\u001b[2m  -   unexpected value \"4\"\u001b[22m\n\u001b[2m  -   locator resolved to 4 elements\u001b[22m\n\u001b[2m  -   unexpected value \"4\"\u001b[22m\n\u001b[2m  -   locator resolved to 4 elements\u001b[22m\n\u001b[2m  -   unexpected value \"4\"\u001b[22m\n\u001b[2m  -   locator resolved to 4 elements\u001b[22m\n\u001b[2m  -   unexpected value \"4\"\u001b[22m\n\u001b[2m  -   locator resolved to 4 elements\u001b[22m\n\u001b[2m  -   unexpected value \"4\"\u001b[22m\n\u001b[2m  -   locator resolved to 4 elements\u001b[22m\n\u001b[2m  -   unexpected value \"4\"\u001b[22m\n",
+                    "stack": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nLocator: locator('.header').getByRole('button')\nExpected: \u001b[32m3\u001b[39m\nReceived: \u001b[31m4\u001b[39m\nCall log:\n  \u001b[2m- expect.soft.toHaveCount with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.header').getByRole('button')\u001b[22m\n\u001b[2m  -   locator resolved to 4 elements\u001b[22m\n\u001b[2m  -   unexpected value \"4\"\u001b[22m\n\u001b[2m  -   locator resolved to 4 elements\u001b[22m\n\u001b[2m  -   unexpected value \"4\"\u001b[22m\n\u001b[2m  -   locator resolved to 4 elements\u001b[22m\n\u001b[2m  -   unexpected value \"4\"\u001b[22m\n\u001b[2m  -   locator resolved to 4 elements\u001b[22m\n\u001b[2m  -   unexpected value \"4\"\u001b[22m\n\u001b[2m  -   locator resolved to 4 elements\u001b[22m\n\u001b[2m  -   unexpected value \"4\"\u001b[22m\n\u001b[2m  -   locator resolved to 4 elements\u001b[22m\n\u001b[2m  -   unexpected value \"4\"\u001b[22m\n\u001b[2m  -   locator resolved to 4 elements\u001b[22m\n\u001b[2m  -   unexpected value \"4\"\u001b[22m\n\u001b[2m  -   locator resolved to 4 elements\u001b[22m\n\u001b[2m  -   unexpected value \"4\"\u001b[22m\n\u001b[2m  -   locator resolved to 4 elements\u001b[22m\n\u001b[2m  -   unexpected value \"4\"\u001b[22m\n\n    at C:\\Playright\\e2e\\first.qauto.spec.js:55:36",
+                    "location": {
+                      "file": "C:\\Playright\\e2e\\first.qauto.spec.js",
+                      "column": 36,
+                      "line": 55
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 53 |\u001b[39m\n \u001b[90m 54 |\u001b[39m   \u001b[90m// Auto-retrying assertions\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 55 |\u001b[39m   \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39msoft(headerButtons)\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m3\u001b[39m)\n \u001b[90m    |\u001b[39m                                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 56 |\u001b[39m   \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39msoft(headerButtons\u001b[33m.\u001b[39mlast())\u001b[33m.\u001b[39mtoHaveText(\u001b[35m/sign in/i\u001b[39m\u001b[33m,\u001b[39m {ignoreCase\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m})\n \u001b[90m 57 |\u001b[39m\n \u001b[90m 58 |\u001b[39m })\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Playright\\e2e\\first.qauto.spec.js",
+                        "column": 36,
+                        "line": 55
+                      },
+                      "message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nLocator: locator('.header').getByRole('button')\nExpected: \u001b[32m3\u001b[39m\nReceived: \u001b[31m4\u001b[39m\nCall log:\n  \u001b[2m- expect.soft.toHaveCount with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.header').getByRole('button')\u001b[22m\n\u001b[2m  -   locator resolved to 4 elements\u001b[22m\n\u001b[2m  -   unexpected value \"4\"\u001b[22m\n\u001b[2m  -   locator resolved to 4 elements\u001b[22m\n\u001b[2m  -   unexpected value \"4\"\u001b[22m\n\u001b[2m  -   locator resolved to 4 elements\u001b[22m\n\u001b[2m  -   unexpected value \"4\"\u001b[22m\n\u001b[2m  -   locator resolved to 4 elements\u001b[22m\n\u001b[2m  -   unexpected value \"4\"\u001b[22m\n\u001b[2m  -   locator resolved to 4 elements\u001b[22m\n\u001b[2m  -   unexpected value \"4\"\u001b[22m\n\u001b[2m  -   locator resolved to 4 elements\u001b[22m\n\u001b[2m  -   unexpected value \"4\"\u001b[22m\n\u001b[2m  -   locator resolved to 4 elements\u001b[22m\n\u001b[2m  -   unexpected value \"4\"\u001b[22m\n\u001b[2m  -   locator resolved to 4 elements\u001b[22m\n\u001b[2m  -   unexpected value \"4\"\u001b[22m\n\u001b[2m  -   locator resolved to 4 elements\u001b[22m\n\u001b[2m  -   unexpected value \"4\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 53 |\u001b[39m\n \u001b[90m 54 |\u001b[39m   \u001b[90m// Auto-retrying assertions\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 55 |\u001b[39m   \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39msoft(headerButtons)\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m3\u001b[39m)\n \u001b[90m    |\u001b[39m                                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 56 |\u001b[39m   \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39msoft(headerButtons\u001b[33m.\u001b[39mlast())\u001b[33m.\u001b[39mtoHaveText(\u001b[35m/sign in/i\u001b[39m\u001b[33m,\u001b[39m {ignoreCase\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m})\n \u001b[90m 57 |\u001b[39m\n \u001b[90m 58 |\u001b[39m })\u001b[0m\n\n\u001b[2m    at C:\\Playright\\e2e\\first.qauto.spec.js:55:36\u001b[22m"
+                    }
+                  ],
+                  "stdout": [
+                    {
+                      "text": "BUTTONS COUNT \u001b[33m4\u001b[39m\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2024-09-06T16:31:53.157Z",
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Playright\\test-results\\first.qauto-check-buttons-qauto\\test-failed-1.png"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Playright\\e2e\\first.qauto.spec.js",
+                    "column": 36,
+                    "line": 55
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "c718e60d19c5300a64eb-1acd4dc9d4c77af6d447",
+          "file": "first.qauto.spec.js",
+          "line": 42,
+          "column": 5
+        },
+        {
+          "title": "check layout",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "qauto",
+              "projectName": "qauto",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "status": "passed",
+                  "duration": 7593,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2024-09-06T16:31:53.153Z",
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Playright\\test-results\\first.qauto-check-layout-qauto\\test-finished-1.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c718e60d19c5300a64eb-b53aeffebf31e8251650",
+          "file": "first.qauto.spec.js",
+          "line": 60,
+          "column": 5
+        },
+        {
+          "title": "has title",
+          "ok": true,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "status": "interrupted",
+                  "duration": 9582,
+                  "error": {
+                    "message": "Error: locator.click: Target page, context or browser has been closed\nCall log:\n  \u001b[2m- waiting for locator('.header').getByRole('button', { name: 'Sign in' })\u001b[22m\n",
+                    "stack": "Error: locator.click: Target page, context or browser has been closed\nCall log:\n  \u001b[2m- waiting for locator('.header').getByRole('button', { name: 'Sign in' })\u001b[22m\n\n    at C:\\Playright\\e2e\\first.qauto.spec.js:13:19",
+                    "location": {
+                      "file": "C:\\Playright\\e2e\\first.qauto.spec.js",
+                      "column": 19,
+                      "line": 13
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 11 |\u001b[39m   \u001b[36mconst\u001b[39m emailInput \u001b[33m=\u001b[39m modal\u001b[33m.\u001b[39mlocator(\u001b[32m'input[name=\"email\"]'\u001b[39m)\n \u001b[90m 12 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 13 |\u001b[39m   \u001b[36mawait\u001b[39m signInBtn\u001b[33m.\u001b[39mclick()\n \u001b[90m    |\u001b[39m                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 14 |\u001b[39m   \u001b[36mawait\u001b[39m registerBtn\u001b[33m.\u001b[39mclick()\n \u001b[90m 15 |\u001b[39m   \u001b[36mawait\u001b[39m firstNameInput\u001b[33m.\u001b[39mfill(\u001b[32m'Jhon'\u001b[39m)\n \u001b[90m 16 |\u001b[39m   \u001b[36mawait\u001b[39m lastNameInput\u001b[33m.\u001b[39mpressSequentially(\u001b[32m'asdfghj'\u001b[39m)\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Playright\\e2e\\first.qauto.spec.js",
+                        "column": 19,
+                        "line": 13
+                      },
+                      "message": "Error: locator.click: Target page, context or browser has been closed\nCall log:\n  \u001b[2m- waiting for locator('.header').getByRole('button', { name: 'Sign in' })\u001b[22m\n\n\n\u001b[0m \u001b[90m 11 |\u001b[39m   \u001b[36mconst\u001b[39m emailInput \u001b[33m=\u001b[39m modal\u001b[33m.\u001b[39mlocator(\u001b[32m'input[name=\"email\"]'\u001b[39m)\n \u001b[90m 12 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 13 |\u001b[39m   \u001b[36mawait\u001b[39m signInBtn\u001b[33m.\u001b[39mclick()\n \u001b[90m    |\u001b[39m                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 14 |\u001b[39m   \u001b[36mawait\u001b[39m registerBtn\u001b[33m.\u001b[39mclick()\n \u001b[90m 15 |\u001b[39m   \u001b[36mawait\u001b[39m firstNameInput\u001b[33m.\u001b[39mfill(\u001b[32m'Jhon'\u001b[39m)\n \u001b[90m 16 |\u001b[39m   \u001b[36mawait\u001b[39m lastNameInput\u001b[33m.\u001b[39mpressSequentially(\u001b[32m'asdfghj'\u001b[39m)\u001b[0m\n\n\u001b[2m    at C:\\Playright\\e2e\\first.qauto.spec.js:13:19\u001b[22m"
+                    },
+                    {
+                      "message": "Error: Target page, context or browser has been closed"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2024-09-06T16:32:03.446Z",
+                  "attachments": [],
+                  "errorLocation": {
+                    "file": "C:\\Playright\\e2e\\first.qauto.spec.js",
+                    "column": 19,
+                    "line": 13
+                  }
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "c718e60d19c5300a64eb-9bd99b3d95a205898197",
+          "file": "first.qauto.spec.js",
+          "line": 3,
+          "column": 5
+        },
+        {
+          "title": "check registration modal",
+          "ok": true,
+          "tags": [
+            "regression"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "status": "interrupted",
+                  "duration": 10012,
+                  "error": {
+                    "message": "Error: locator.click: Target page, context or browser has been closed\nCall log:\n  \u001b[2m- waiting for locator('.header').getByRole('button', { name: 'Sign in' })\u001b[22m\n",
+                    "stack": "Error: locator.click: Target page, context or browser has been closed\nCall log:\n  \u001b[2m- waiting for locator('.header').getByRole('button', { name: 'Sign in' })\u001b[22m\n\n    at C:\\Playright\\e2e\\first.qauto.spec.js:34:19",
+                    "location": {
+                      "file": "C:\\Playright\\e2e\\first.qauto.spec.js",
+                      "column": 19,
+                      "line": 34
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 32 |\u001b[39m   \u001b[36mconst\u001b[39m emailInput \u001b[33m=\u001b[39m modal\u001b[33m.\u001b[39mlocator(\u001b[32m'input[name=\"email\"]'\u001b[39m)\n \u001b[90m 33 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 34 |\u001b[39m   \u001b[36mawait\u001b[39m signInBtn\u001b[33m.\u001b[39mclick()\n \u001b[90m    |\u001b[39m                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 35 |\u001b[39m   \u001b[36mawait\u001b[39m registerBtn\u001b[33m.\u001b[39mclick()\n \u001b[90m 36 |\u001b[39m   \n \u001b[90m 37 |\u001b[39m   \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39msoft(lastNameInput\u001b[33m,\u001b[39m \u001b[32m'Last name input visible'\u001b[39m)\u001b[33m.\u001b[39mtoBeVisible()\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Playright\\e2e\\first.qauto.spec.js",
+                        "column": 19,
+                        "line": 34
+                      },
+                      "message": "Error: locator.click: Target page, context or browser has been closed\nCall log:\n  \u001b[2m- waiting for locator('.header').getByRole('button', { name: 'Sign in' })\u001b[22m\n\n\n\u001b[0m \u001b[90m 32 |\u001b[39m   \u001b[36mconst\u001b[39m emailInput \u001b[33m=\u001b[39m modal\u001b[33m.\u001b[39mlocator(\u001b[32m'input[name=\"email\"]'\u001b[39m)\n \u001b[90m 33 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 34 |\u001b[39m   \u001b[36mawait\u001b[39m signInBtn\u001b[33m.\u001b[39mclick()\n \u001b[90m    |\u001b[39m                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 35 |\u001b[39m   \u001b[36mawait\u001b[39m registerBtn\u001b[33m.\u001b[39mclick()\n \u001b[90m 36 |\u001b[39m   \n \u001b[90m 37 |\u001b[39m   \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39msoft(lastNameInput\u001b[33m,\u001b[39m \u001b[32m'Last name input visible'\u001b[39m)\u001b[33m.\u001b[39mtoBeVisible()\u001b[0m\n\n\u001b[2m    at C:\\Playright\\e2e\\first.qauto.spec.js:34:19\u001b[22m"
+                    },
+                    {
+                      "message": "Error: Target page, context or browser has been closed"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2024-09-06T16:32:03.123Z",
+                  "attachments": [],
+                  "errorLocation": {
+                    "file": "C:\\Playright\\e2e\\first.qauto.spec.js",
+                    "column": 19,
+                    "line": 34
+                  }
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "c718e60d19c5300a64eb-111bf6c8e03416343448",
+          "file": "first.qauto.spec.js",
+          "line": 24,
+          "column": 5
+        },
+        {
+          "title": "check buttons",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "status": "failed",
+                  "duration": 4139,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m4\u001b[39m\nReceived: \u001b[31m0\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m4\u001b[39m\nReceived: \u001b[31m0\u001b[39m\n    at C:\\Playright\\e2e\\first.qauto.spec.js:50:17",
+                    "location": {
+                      "file": "C:\\Playright\\e2e\\first.qauto.spec.js",
+                      "column": 17,
+                      "line": 50
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 48 |\u001b[39m   \u001b[36mconst\u001b[39m count \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m headerButtons\u001b[33m.\u001b[39mcount()\n \u001b[90m 49 |\u001b[39m   console\u001b[33m.\u001b[39mlog(\u001b[32m'BUTTONS COUNT'\u001b[39m\u001b[33m,\u001b[39m count)\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 50 |\u001b[39m   expect(count)\u001b[33m.\u001b[39mtoBe(\u001b[35m4\u001b[39m)\n \u001b[90m    |\u001b[39m                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 51 |\u001b[39m   \u001b[36mconst\u001b[39m lastBtnText \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m headerButtons\u001b[33m.\u001b[39mlast()\u001b[33m.\u001b[39minnerText()\n \u001b[90m 52 |\u001b[39m   expect(lastBtnText)\u001b[33m.\u001b[39mtoBe(\u001b[32m'Sign In'\u001b[39m)\n \u001b[90m 53 |\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Playright\\e2e\\first.qauto.spec.js",
+                        "column": 17,
+                        "line": 50
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m4\u001b[39m\nReceived: \u001b[31m0\u001b[39m\n\n\u001b[0m \u001b[90m 48 |\u001b[39m   \u001b[36mconst\u001b[39m count \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m headerButtons\u001b[33m.\u001b[39mcount()\n \u001b[90m 49 |\u001b[39m   console\u001b[33m.\u001b[39mlog(\u001b[32m'BUTTONS COUNT'\u001b[39m\u001b[33m,\u001b[39m count)\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 50 |\u001b[39m   expect(count)\u001b[33m.\u001b[39mtoBe(\u001b[35m4\u001b[39m)\n \u001b[90m    |\u001b[39m                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 51 |\u001b[39m   \u001b[36mconst\u001b[39m lastBtnText \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m headerButtons\u001b[33m.\u001b[39mlast()\u001b[33m.\u001b[39minnerText()\n \u001b[90m 52 |\u001b[39m   expect(lastBtnText)\u001b[33m.\u001b[39mtoBe(\u001b[32m'Sign In'\u001b[39m)\n \u001b[90m 53 |\u001b[39m\u001b[0m\n\n\u001b[2m    at C:\\Playright\\e2e\\first.qauto.spec.js:50:17\u001b[22m"
+                    }
+                  ],
+                  "stdout": [
+                    {
+                      "text": "BUTTONS COUNT \u001b[33m0\u001b[39m\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2024-09-06T16:32:03.147Z",
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Playright\\test-results\\first.qauto-check-buttons-firefox\\test-failed-1.png"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Playright\\e2e\\first.qauto.spec.js",
+                    "column": 17,
+                    "line": 50
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "c718e60d19c5300a64eb-2f03b4c60ac9db9615df",
+          "file": "first.qauto.spec.js",
+          "line": 42,
+          "column": 5
+        },
+        {
+          "title": "check layout",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "status": "interrupted",
+                  "duration": 3863,
+                  "error": {
+                    "message": "Error: locator.click: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> C:\\Users\\Mykhailo.Pyshnyi\\AppData\\Local\\ms-playwright\\firefox-1458\\firefox\\firefox.exe -no-remote -headless -profile C:\\Users\\MYKHAI~1.PYS\\AppData\\Local\\Temp\\playwright_firefoxdev_profile-XXXXXXVtlJo4 -juggler-pipe -silent\n<launched> pid=12380\n[pid=12380][err] *** You are running in headless mode.\n[pid=12380][err] JavaScript warning: resource://services-settings/Utils.sys.mjs, line 114: unreachable code after return statement\n[pid=12380][out] console.warn: services.settings: Ignoring preference override of remote settings server\n[pid=12380][out] console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment\n[pid=12380][out] console.error: ({})\n[pid=12380][out] \n[pid=12380][out] Juggler listening to the pipe\n[pid=12380][out] Crash Annotation GraphicsCriticalError: |[0][GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt (t=8.90096) [GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt\n[pid=12380][out] console.error: SearchEngineSelector: \"Received empty search configuration!\"\n[pid=12380][err] JavaScript error: chrome://juggler/content/Helper.js, line 82: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIWebProgress.removeProgressListener]\n[pid=12380][out] console.error: \"Received empty top sites configuration!\"\n[pid=12380][out] console.error: SearchEngineSelector: \"Received empty search configuration!\"\n[pid=12380][out] console.error: SearchService: \"#init: failure initializing search:\" ({})\n[pid=12380][err] JavaScript error: resource://gre/modules/SearchEngineSelector.sys.mjs, line 73: NS_ERROR_UNEXPECTED: Failed to get engine data from Remote Settings\n[pid=12380][err] JavaScript error: resource://gre/modules/SearchEngineSelector.sys.mjs, line 73: NS_ERROR_UNEXPECTED: Failed to get engine data from Remote Settings\n[pid=12380][err] JavaScript error: resource://gre/modules/SearchEngineSelector.sys.mjs, line 73: NS_ERROR_UNEXPECTED: Failed to get engine data from Remote Settings\n[pid=12380][err] JavaScript error: resource://gre/modules/SearchEngineSelector.sys.mjs, line 73: NS_ERROR_UNEXPECTED: Failed to get engine data from Remote Settings\n[pid=12380][out] console.error: \"Received empty top sites configuration!\"\n[pid=12380][out] console.error: WebExtensions: \n[pid=12380][out]   Message: [Exception... \"Failed to get engine data from Remote Settings\"  nsresult: \"0x8000ffff (NS_ERROR_UNEXPECTED)\"  location: \"JS frame :: resource://gre/modules/SearchEngineSelector.sys.mjs :: getEngineConfiguration :: line 73\"  data: no]\n[pid=12380][out]   Stack:\n[pid=12380][out]     getEngineConfiguration@resource://gre/modules/SearchEngineSelector.sys.mjs:73:24\n[pid=12380][out] \n[pid=12380][err] JavaScript error: chrome://juggler/content/content/FrameTree.js, line 565: TypeError: this.domWindow() is undefined\n[pid=12380][err] JavaScript error: chrome://juggler/content/Helper.js, line 82: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIWebProgress.removeProgressListener]\n[pid=12380][out] console.error: SearchSettings: \"_write: Could not write to settings file:\" (new Error(\"cannot write without any engine.\", \"resource://gre/modules/SearchSettings.sys.mjs\", 303))\n[pid=12380][out] console.error: ({})\n[pid=12380][out] console.error: URLBar - Provider.UrlbarProviderSearchTips: ({})\n[pid=12380] <process did exit: exitCode=3221225786, signal=null>\n[pid=12380] starting temporary directories cleanup\nCall log:\n  \u001b[2m- waiting for locator('.header').getByRole('button', { name: 'Sign in' })\u001b[22m\n",
+                    "stack": "Error: locator.click: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> C:\\Users\\Mykhailo.Pyshnyi\\AppData\\Local\\ms-playwright\\firefox-1458\\firefox\\firefox.exe -no-remote -headless -profile C:\\Users\\MYKHAI~1.PYS\\AppData\\Local\\Temp\\playwright_firefoxdev_profile-XXXXXXVtlJo4 -juggler-pipe -silent\n<launched> pid=12380\n[pid=12380][err] *** You are running in headless mode.\n[pid=12380][err] JavaScript warning: resource://services-settings/Utils.sys.mjs, line 114: unreachable code after return statement\n[pid=12380][out] console.warn: services.settings: Ignoring preference override of remote settings server\n[pid=12380][out] console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment\n[pid=12380][out] console.error: ({})\n[pid=12380][out] \n[pid=12380][out] Juggler listening to the pipe\n[pid=12380][out] Crash Annotation GraphicsCriticalError: |[0][GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt (t=8.90096) [GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt\n[pid=12380][out] console.error: SearchEngineSelector: \"Received empty search configuration!\"\n[pid=12380][err] JavaScript error: chrome://juggler/content/Helper.js, line 82: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIWebProgress.removeProgressListener]\n[pid=12380][out] console.error: \"Received empty top sites configuration!\"\n[pid=12380][out] console.error: SearchEngineSelector: \"Received empty search configuration!\"\n[pid=12380][out] console.error: SearchService: \"#init: failure initializing search:\" ({})\n[pid=12380][err] JavaScript error: resource://gre/modules/SearchEngineSelector.sys.mjs, line 73: NS_ERROR_UNEXPECTED: Failed to get engine data from Remote Settings\n[pid=12380][err] JavaScript error: resource://gre/modules/SearchEngineSelector.sys.mjs, line 73: NS_ERROR_UNEXPECTED: Failed to get engine data from Remote Settings\n[pid=12380][err] JavaScript error: resource://gre/modules/SearchEngineSelector.sys.mjs, line 73: NS_ERROR_UNEXPECTED: Failed to get engine data from Remote Settings\n[pid=12380][err] JavaScript error: resource://gre/modules/SearchEngineSelector.sys.mjs, line 73: NS_ERROR_UNEXPECTED: Failed to get engine data from Remote Settings\n[pid=12380][out] console.error: \"Received empty top sites configuration!\"\n[pid=12380][out] console.error: WebExtensions: \n[pid=12380][out]   Message: [Exception... \"Failed to get engine data from Remote Settings\"  nsresult: \"0x8000ffff (NS_ERROR_UNEXPECTED)\"  location: \"JS frame :: resource://gre/modules/SearchEngineSelector.sys.mjs :: getEngineConfiguration :: line 73\"  data: no]\n[pid=12380][out]   Stack:\n[pid=12380][out]     getEngineConfiguration@resource://gre/modules/SearchEngineSelector.sys.mjs:73:24\n[pid=12380][out] \n[pid=12380][err] JavaScript error: chrome://juggler/content/content/FrameTree.js, line 565: TypeError: this.domWindow() is undefined\n[pid=12380][err] JavaScript error: chrome://juggler/content/Helper.js, line 82: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIWebProgress.removeProgressListener]\n[pid=12380][out] console.error: SearchSettings: \"_write: Could not write to settings file:\" (new Error(\"cannot write without any engine.\", \"resource://gre/modules/SearchSettings.sys.mjs\", 303))\n[pid=12380][out] console.error: ({})\n[pid=12380][out] console.error: URLBar - Provider.UrlbarProviderSearchTips: ({})\n[pid=12380] <process did exit: exitCode=3221225786, signal=null>\n[pid=12380] starting temporary directories cleanup\nCall log:\n  \u001b[2m- waiting for locator('.header').getByRole('button', { name: 'Sign in' })\u001b[22m\n\n    at C:\\Playright\\[pid=12380][out]     getEngineConfiguration@resource:\\gre\\modules\\SearchEngineSelector.sys.mjs:73:24\n    at C:\\Playright\\e2e\\first.qauto.spec.js:65:19",
+                    "location": {
+                      "file": "C:\\Playright\\[pid=12380][out]     getEngineConfiguration@resource:\\gre\\modules\\SearchEngineSelector.sys.mjs",
+                      "column": 24,
+                      "line": 73
+                    }
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Playright\\[pid=12380][out]     getEngineConfiguration@resource:\\gre\\modules\\SearchEngineSelector.sys.mjs",
+                        "column": 24,
+                        "line": 73
+                      },
+                      "message": "Error: locator.click: Target page, context or browser has been closed\nBrowser logs:\n\n<launching> C:\\Users\\Mykhailo.Pyshnyi\\AppData\\Local\\ms-playwright\\firefox-1458\\firefox\\firefox.exe -no-remote -headless -profile C:\\Users\\MYKHAI~1.PYS\\AppData\\Local\\Temp\\playwright_firefoxdev_profile-XXXXXXVtlJo4 -juggler-pipe -silent\n<launched> pid=12380\n[pid=12380][err] *** You are running in headless mode.\n[pid=12380][err] JavaScript warning: resource://services-settings/Utils.sys.mjs, line 114: unreachable code after return statement\n[pid=12380][out] console.warn: services.settings: Ignoring preference override of remote settings server\n[pid=12380][out] console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment\n[pid=12380][out] console.error: ({})\n[pid=12380][out] \n[pid=12380][out] Juggler listening to the pipe\n[pid=12380][out] Crash Annotation GraphicsCriticalError: |[0][GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt (t=8.90096) [GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt\n[pid=12380][out] console.error: SearchEngineSelector: \"Received empty search configuration!\"\n[pid=12380][err] JavaScript error: chrome://juggler/content/Helper.js, line 82: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIWebProgress.removeProgressListener]\n[pid=12380][out] console.error: \"Received empty top sites configuration!\"\n[pid=12380][out] console.error: SearchEngineSelector: \"Received empty search configuration!\"\n[pid=12380][out] console.error: SearchService: \"#init: failure initializing search:\" ({})\n[pid=12380][err] JavaScript error: resource://gre/modules/SearchEngineSelector.sys.mjs, line 73: NS_ERROR_UNEXPECTED: Failed to get engine data from Remote Settings\n[pid=12380][err] JavaScript error: resource://gre/modules/SearchEngineSelector.sys.mjs, line 73: NS_ERROR_UNEXPECTED: Failed to get engine data from Remote Settings\n[pid=12380][err] JavaScript error: resource://gre/modules/SearchEngineSelector.sys.mjs, line 73: NS_ERROR_UNEXPECTED: Failed to get engine data from Remote Settings\n[pid=12380][err] JavaScript error: resource://gre/modules/SearchEngineSelector.sys.mjs, line 73: NS_ERROR_UNEXPECTED: Failed to get engine data from Remote Settings\n[pid=12380][out] console.error: \"Received empty top sites configuration!\"\n[pid=12380][out] console.error: WebExtensions: \n[pid=12380][out]   Message: [Exception... \"Failed to get engine data from Remote Settings\"  nsresult: \"0x8000ffff (NS_ERROR_UNEXPECTED)\"  location: \"JS frame :: resource://gre/modules/SearchEngineSelector.sys.mjs :: getEngineConfiguration :: line 73\"  data: no]\n[pid=12380][out]   Stack:\n[pid=12380][out]     getEngineConfiguration@resource://gre/modules/SearchEngineSelector.sys.mjs:73:24\n[pid=12380][out] \n[pid=12380][err] JavaScript error: chrome://juggler/content/content/FrameTree.js, line 565: TypeError: this.domWindow() is undefined\n[pid=12380][err] JavaScript error: chrome://juggler/content/Helper.js, line 82: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIWebProgress.removeProgressListener]\n[pid=12380][out] console.error: SearchSettings: \"_write: Could not write to settings file:\" (new Error(\"cannot write without any engine.\", \"resource://gre/modules/SearchSettings.sys.mjs\", 303))\n[pid=12380][out] console.error: ({})\n[pid=12380][out] console.error: URLBar - Provider.UrlbarProviderSearchTips: ({})\n[pid=12380] <process did exit: exitCode=3221225786, signal=null>\n[pid=12380] starting temporary directories cleanup\nCall log:\n  \u001b[2m- waiting for locator('.header').getByRole('button', { name: 'Sign in' })\u001b[22m\n\n\n\u001b[2m    at C:\\Playright\\[pid=12380][out]     getEngineConfiguration@resource:\\gre\\modules\\SearchEngineSelector.sys.mjs:73:24\u001b[22m\n\u001b[2m    at C:\\Playright\\e2e\\first.qauto.spec.js:65:19\u001b[22m"
+                    },
+                    {
+                      "message": "Error: Target page, context or browser has been closed"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2024-09-06T16:32:09.311Z",
+                  "attachments": [],
+                  "errorLocation": {
+                    "file": "C:\\Playright\\[pid=12380][out]     getEngineConfiguration@resource:\\gre\\modules\\SearchEngineSelector.sys.mjs",
+                    "column": 24,
+                    "line": 73
+                  }
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "c718e60d19c5300a64eb-bcf9dee8b1d509f20539",
+          "file": "first.qauto.spec.js",
+          "line": 60,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "garage\\test.qauto.spec.js",
+      "file": "garage/test.qauto.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "has title",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 0,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "qauto",
+              "projectName": "qauto",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "status": "passed",
+                  "duration": 6955,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2024-09-06T16:31:53.193Z",
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Playright\\test-results\\garage-test.qauto-has-title-qauto\\test-finished-1.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2b2c729fe8660f0c5c91-02c3050025c771daf3ae",
+          "file": "garage/test.qauto.spec.js",
+          "line": 3,
+          "column": 5
+        },
+        {
+          "title": "has title",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "status": "interrupted",
+                  "duration": 3944,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByRole('button', { name: 'Guest log in' })\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n  \u001b[2m- expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Guest log in' })\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByRole('button', { name: 'Guest log in' })\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n  \u001b[2m- expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Guest log in' })\u001b[22m\n\n    at C:\\Playright\\e2e\\garage\\test.qauto.spec.js:6:65",
+                    "location": {
+                      "file": "C:\\Playright\\e2e\\garage\\test.qauto.spec.js",
+                      "column": 65,
+                      "line": 6
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 4 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 5 |\u001b[39m   \u001b[90m// Expect a title \"to contain\" a substring.\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 6 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m{name\u001b[33m:\u001b[39m \u001b[32m'Guest log in'\u001b[39m}))\u001b[33m.\u001b[39mtoBeVisible()\n \u001b[90m   |\u001b[39m                                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 7 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mpause()\n \u001b[90m 8 |\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Playright\\e2e\\garage\\test.qauto.spec.js",
+                        "column": 65,
+                        "line": 6
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByRole('button', { name: 'Guest log in' })\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n  \u001b[2m- expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Guest log in' })\u001b[22m\n\n\n\u001b[0m \u001b[90m 4 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 5 |\u001b[39m   \u001b[90m// Expect a title \"to contain\" a substring.\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 6 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m{name\u001b[33m:\u001b[39m \u001b[32m'Guest log in'\u001b[39m}))\u001b[33m.\u001b[39mtoBeVisible()\n \u001b[90m   |\u001b[39m                                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 7 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mpause()\n \u001b[90m 8 |\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m\n\n\u001b[2m    at C:\\Playright\\e2e\\garage\\test.qauto.spec.js:6:65\u001b[22m"
+                    },
+                    {
+                      "message": "Error: Target page, context or browser has been closed"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2024-09-06T16:32:09.232Z",
+                  "attachments": [],
+                  "errorLocation": {
+                    "file": "C:\\Playright\\e2e\\garage\\test.qauto.spec.js",
+                    "column": 65,
+                    "line": 6
+                  }
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "2b2c729fe8660f0c5c91-f9980be709b17e813d03",
+          "file": "garage/test.qauto.spec.js",
+          "line": 3,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "cod.spec.js",
+      "file": "cod.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Search for gooogle and open DOU.UA",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "status": "passed",
+                  "duration": 5388,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2024-09-06T16:31:53.166Z",
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Playright\\test-results\\cod-Search-for-gooogle-and-open-DOU-UA-firefox\\test-finished-1.png"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "106ba6964577d09bbd79-a623527efe6c4c2de299",
+          "file": "cod.spec.js",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "codget.spec.js",
+      "file": "codget.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "test",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "status": "interrupted",
+                  "duration": 13634,
+                  "error": {
+                    "message": "Error: locator.click: Target page, context or browser has been closed\nCall log:\n  \u001b[2m- waiting for getByLabel('Найти')\u001b[22m\n",
+                    "stack": "Error: locator.click: Target page, context or browser has been closed\nCall log:\n  \u001b[2m- waiting for getByLabel('Найти')\u001b[22m\n\n    at C:\\Playright\\e2e\\codget.spec.js:5:34",
+                    "location": {
+                      "file": "C:\\Playright\\e2e\\codget.spec.js",
+                      "column": 34,
+                      "line": 5
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 3 |\u001b[39m test(\u001b[32m\"test\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 4 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m\"https://www.google.com/\"\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 5 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByLabel(\u001b[32m\"Найти\"\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m   |\u001b[39m                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 6 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByLabel(\u001b[32m\"Найти\"\u001b[39m)\u001b[33m.\u001b[39mfill(\u001b[32m\"dou.ua\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 7 |\u001b[39m   \u001b[36mawait\u001b[39m page\n \u001b[90m 8 |\u001b[39m     \u001b[33m.\u001b[39mgetByRole(\u001b[32m\"link\"\u001b[39m\u001b[33m,\u001b[39m {\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Playright\\e2e\\codget.spec.js",
+                        "column": 34,
+                        "line": 5
+                      },
+                      "message": "Error: locator.click: Target page, context or browser has been closed\nCall log:\n  \u001b[2m- waiting for getByLabel('Найти')\u001b[22m\n\n\n\u001b[0m \u001b[90m 3 |\u001b[39m test(\u001b[32m\"test\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 4 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m\"https://www.google.com/\"\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 5 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByLabel(\u001b[32m\"Найти\"\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m   |\u001b[39m                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 6 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByLabel(\u001b[32m\"Найти\"\u001b[39m)\u001b[33m.\u001b[39mfill(\u001b[32m\"dou.ua\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 7 |\u001b[39m   \u001b[36mawait\u001b[39m page\n \u001b[90m 8 |\u001b[39m     \u001b[33m.\u001b[39mgetByRole(\u001b[32m\"link\"\u001b[39m\u001b[33m,\u001b[39m {\u001b[0m\n\n\u001b[2m    at C:\\Playright\\e2e\\codget.spec.js:5:34\u001b[22m"
+                    },
+                    {
+                      "message": "Error: Target page, context or browser has been closed"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2024-09-06T16:32:00.294Z",
+                  "attachments": [],
+                  "errorLocation": {
+                    "file": "C:\\Playright\\e2e\\codget.spec.js",
+                    "column": 34,
+                    "line": 5
+                  }
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "bffaf7d2e02f10c43a29-5a84b6a700278035a642",
+          "file": "codget.spec.js",
+          "line": 3,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "locators.spec.js",
+      "file": "locators.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "has title",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 11,
+                  "status": "interrupted",
+                  "duration": 2434,
+                  "error": {
+                    "message": "Error: page.goto: Target page, context or browser has been closed\nCall log:\n  \u001b[2m- navigating to \"http://google.com/\", waiting until \"load\"\u001b[22m\n",
+                    "stack": "Error: page.goto: Target page, context or browser has been closed\nCall log:\n  \u001b[2m- navigating to \"http://google.com/\", waiting until \"load\"\u001b[22m\n\n    at C:\\Playright\\e2e\\locators.spec.js:4:14",
+                    "location": {
+                      "file": "C:\\Playright\\e2e\\locators.spec.js",
+                      "column": 14,
+                      "line": 4
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 2 |\u001b[39m\n \u001b[90m 3 |\u001b[39m test(\u001b[32m'has title'\u001b[39m\u001b[33m,\u001b[39m   \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 4 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m   |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 5 |\u001b[39m\n \u001b[90m 6 |\u001b[39m   \u001b[36mconst\u001b[39m header \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'.header'\u001b[39m)\n \u001b[90m 7 |\u001b[39m   \u001b[36mconst\u001b[39m signInBtn \u001b[33m=\u001b[39m header\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m {name \u001b[33m:\u001b[39m \u001b[32m'Sign in'\u001b[39m})\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Playright\\e2e\\locators.spec.js",
+                        "column": 14,
+                        "line": 4
+                      },
+                      "message": "Error: page.goto: Target page, context or browser has been closed\nCall log:\n  \u001b[2m- navigating to \"http://google.com/\", waiting until \"load\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 2 |\u001b[39m\n \u001b[90m 3 |\u001b[39m test(\u001b[32m'has title'\u001b[39m\u001b[33m,\u001b[39m   \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 4 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m   |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 5 |\u001b[39m\n \u001b[90m 6 |\u001b[39m   \u001b[36mconst\u001b[39m header \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'.header'\u001b[39m)\n \u001b[90m 7 |\u001b[39m   \u001b[36mconst\u001b[39m signInBtn \u001b[33m=\u001b[39m header\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m {name \u001b[33m:\u001b[39m \u001b[32m'Sign in'\u001b[39m})\u001b[0m\n\n\u001b[2m    at C:\\Playright\\e2e\\locators.spec.js:4:14\u001b[22m"
+                    },
+                    {
+                      "message": "Error: Target page, context or browser has been closed"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2024-09-06T16:32:10.406Z",
+                  "attachments": [],
+                  "errorLocation": {
+                    "file": "C:\\Playright\\e2e\\locators.spec.js",
+                    "column": 14,
+                    "line": 4
+                  }
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "8abad3716f40388ac053-b820334a3354291db66b",
+          "file": "locators.spec.js",
+          "line": 3,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "ws10.spec.js",
+      "file": "ws10.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "has title",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "938103259d04072ee4a2-3d72c2fb66e319c82b4b",
+          "file": "ws10.spec.js",
+          "line": 3,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2024-09-06T16:31:52.115Z",
+    "duration": 21936.654,
+    "expected": 3,
+    "skipped": 7,
+    "unexpected": 4,
+    "flaky": 0
+  }
+}

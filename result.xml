@@ -1,0 +1,223 @@
+
+<testsuites id="" name="" tests="14" failures="4" skipped="7" errors="0" time="21.936653999999997">
+<testsuite name="first.qauto.spec.js" timestamp="2024-09-06T16:31:52.167Z" hostname="qauto" tests="4" failures="3" skipped="0" time="40.334" errors="0">
+<testcase name="has title" classname="first.qauto.spec.js" time="7.828">
+<failure message="first.qauto.spec.js:3:5 has title" type="FAILURE">
+<![CDATA[  [qauto] › first.qauto.spec.js:3:5 › has title ────────────────────────────────────────────────────
+
+    Error: locator.fill: Error: strict mode violation: locator('.modal-content').locator('input[name="email"]') resolved to 2 elements:
+        1) <input type="text" name="email" id="signinEmail" _ngcontent-oam-c51="" formcontrolname="email" class="form-control ng-untouched ng-pristine ng-invalid"/> aka locator('#signinEmail')
+        2) <input type="text" name="email" id="signupEmail" _ngcontent-oam-c47="" formcontrolname="email" class="form-control ng-untouched ng-pristine ng-invalid"/> aka getByLabel('Name')
+
+    Call log:
+      - waiting for locator('.modal-content').locator('input[name="email"]')
+
+
+      15 |   await firstNameInput.fill('Jhon')
+      16 |   await lastNameInput.pressSequentially('asdfghj')
+    > 17 |   await emailInput.fill('test.@test.com')
+         |                    ^
+      18 |
+      19 |   await emailInput.blur()
+      20 |
+
+        at C:\Playright\e2e\first.qauto.spec.js:17:20
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\first.qauto-has-title-qauto\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\first.qauto-has-title-qauto\test-failed-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="check registration modal" classname="first.qauto.spec.js" time="12.442">
+<failure message="first.qauto.spec.js:24:5 check registration modal" type="FAILURE">
+<![CDATA[  [qauto] › first.qauto.spec.js:24:5 › check registration modal ────────────────────────────────────
+
+    Error: First name input visible
+
+    Timed out 5000ms waiting for expect(locator).toBeVisible()
+
+    Locator: locator('.modal-content').locator('#signupNam')
+    Expected: visible
+    Received: <element(s) not found>
+    Call log:
+      - First name input visible with timeout 5000ms
+      - waiting for locator('.modal-content').locator('#signupNam')
+
+
+      36 |   
+      37 |   await expect.soft(lastNameInput, 'Last name input visible').toBeVisible()
+    > 38 |   await expect.soft(firstNameInput, 'First name input visible').toBeVisible()
+         |                                                                 ^
+      39 |   await expect.soft(emailInput, 'Email input visible').toBeVisible()
+      40 | });
+      41 |
+
+        at C:\Playright\e2e\first.qauto.spec.js:38:65
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\first.qauto-check-registration-modal-qauto\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\first.qauto-check-registration-modal-qauto\test-failed-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="check buttons" classname="first.qauto.spec.js" time="12.471">
+<failure message="first.qauto.spec.js:42:5 check buttons" type="FAILURE">
+<![CDATA[  [qauto] › first.qauto.spec.js:42:5 › check buttons ───────────────────────────────────────────────
+
+    Error: Timed out 5000ms waiting for expect(locator).toHaveCount(expected)
+
+    Locator: locator('.header').getByRole('button')
+    Expected: 3
+    Received: 4
+    Call log:
+      - expect.soft.toHaveCount with timeout 5000ms
+      - waiting for locator('.header').getByRole('button')
+      -   locator resolved to 4 elements
+      -   unexpected value "4"
+      -   locator resolved to 4 elements
+      -   unexpected value "4"
+      -   locator resolved to 4 elements
+      -   unexpected value "4"
+      -   locator resolved to 4 elements
+      -   unexpected value "4"
+      -   locator resolved to 4 elements
+      -   unexpected value "4"
+      -   locator resolved to 4 elements
+      -   unexpected value "4"
+      -   locator resolved to 4 elements
+      -   unexpected value "4"
+      -   locator resolved to 4 elements
+      -   unexpected value "4"
+      -   locator resolved to 4 elements
+      -   unexpected value "4"
+
+
+      53 |
+      54 |   // Auto-retrying assertions
+    > 55 |   await expect.soft(headerButtons).toHaveCount(3)
+         |                                    ^
+      56 |   await expect.soft(headerButtons.last()).toHaveText(/sign in/i, {ignoreCase: true})
+      57 |
+      58 | })
+
+        at C:\Playright\e2e\first.qauto.spec.js:55:36
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\first.qauto-check-buttons-qauto\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[BUTTONS COUNT [33m4[39m
+
+[[ATTACHMENT|test-results\first.qauto-check-buttons-qauto\test-failed-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="check layout" classname="first.qauto.spec.js" time="7.593">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\first.qauto-check-layout-qauto\test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="garage\test.qauto.spec.js" timestamp="2024-09-06T16:31:52.167Z" hostname="qauto" tests="1" failures="0" skipped="0" time="6.955" errors="0">
+<testcase name="has title" classname="garage\test.qauto.spec.js" time="6.955">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\garage-test.qauto-has-title-qauto\test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="cod.spec.js" timestamp="2024-09-06T16:31:52.167Z" hostname="firefox" tests="1" failures="0" skipped="0" time="5.388" errors="0">
+<testcase name="Search for gooogle and open DOU.UA" classname="cod.spec.js" time="5.388">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\cod-Search-for-gooogle-and-open-DOU-UA-firefox\test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="codget.spec.js" timestamp="2024-09-06T16:31:52.167Z" hostname="firefox" tests="1" failures="0" skipped="1" time="13.634" errors="0">
+<testcase name="test" classname="codget.spec.js" time="13.634">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="first.qauto.spec.js" timestamp="2024-09-06T16:31:52.167Z" hostname="firefox" tests="4" failures="1" skipped="3" time="27.596" errors="0">
+<testcase name="has title" classname="first.qauto.spec.js" time="9.582">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="check registration modal" classname="first.qauto.spec.js" time="10.012">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="check buttons" classname="first.qauto.spec.js" time="4.139">
+<failure message="first.qauto.spec.js:42:5 check buttons" type="FAILURE">
+<![CDATA[  [firefox] › first.qauto.spec.js:42:5 › check buttons ─────────────────────────────────────────────
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 4
+    Received: 0
+
+      48 |   const count = await headerButtons.count()
+      49 |   console.log('BUTTONS COUNT', count)
+    > 50 |   expect(count).toBe(4)
+         |                 ^
+      51 |   const lastBtnText = await headerButtons.last().innerText()
+      52 |   expect(lastBtnText).toBe('Sign In')
+      53 |
+
+        at C:\Playright\e2e\first.qauto.spec.js:50:17
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\first.qauto-check-buttons-firefox\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[BUTTONS COUNT [33m0[39m
+
+[[ATTACHMENT|test-results\first.qauto-check-buttons-firefox\test-failed-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="check layout" classname="first.qauto.spec.js" time="3.863">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="garage\test.qauto.spec.js" timestamp="2024-09-06T16:31:52.167Z" hostname="firefox" tests="1" failures="0" skipped="1" time="3.944" errors="0">
+<testcase name="has title" classname="garage\test.qauto.spec.js" time="3.944">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="locators.spec.js" timestamp="2024-09-06T16:31:52.167Z" hostname="firefox" tests="1" failures="0" skipped="1" time="2.434" errors="0">
+<testcase name="has title" classname="locators.spec.js" time="2.434">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="ws10.spec.js" timestamp="2024-09-06T16:31:52.167Z" hostname="firefox" tests="1" failures="0" skipped="1" time="0" errors="0">
+<testcase name="has title" classname="ws10.spec.js" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+</testsuites>
