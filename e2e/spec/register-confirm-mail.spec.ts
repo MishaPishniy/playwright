@@ -2,7 +2,7 @@ import { expect, test } from "@playwright/test"; // імпорт бібліот�
 import axios from "axios"; // імпорт для апі запитів
 import crypto from "node:crypto"; // імпорт ля хешування email у формат MD5.
 
-const USER_NAME = "123qwe"; // USER_NAME — ім'я користувача для реєстрації.
+const USER_NAME = "1234qwe"; // USER_NAME — ім'я користувача для реєстрації.
 const TEMP_MAIL = `${USER_NAME}@cevipsa.com`; // TEMP_MAIL — тимчасовий email для реєстрації (створюється на основі USER_NAME).
 const md5 = crypto.createHash("md5").update(TEMP_MAIL).digest("hex"); // md5 — хеш MD5 від тимчасового email, який використовується для доступу до поштової скриньки.
 console.log(md5); //Виводимо хеш MD5 в консоль для відстеження.
@@ -22,8 +22,8 @@ test("Check confirmation email", async ({ page }) => {
       method: "GET",   
       url: `https://privatix-temp-mail-v1.p.rapidapi.com/request/mail/id/${md5}/`,
       headers: {
-        "x-rapidapi-key": "kpuLYNEQhumshaNGSSCGkasZ1oHDp1JDCUpjsnpz2J7ywb4Fys",
-        "x-rapidapi-host": "privatix-temp-mail-v1.p.rapidapi.com",
+        "x-rapidapi-key": "kpuLYNEQhumshaNGSSCGkasZ1oHDp1JDCUpjsnpz2J7ywb4Fys", // апі ключі для тестової пошти (створити свої)
+        "x-rapidapi-host": "privatix-temp-mail-v1.p.rapidapi.com", // тестовий хост (створити свої)
       },
     };
     //Виконуємо запит до API в циклі, поки не отримаємо відповідь або не пройде 5 спроб (з інтервалом у 2 секунди).
