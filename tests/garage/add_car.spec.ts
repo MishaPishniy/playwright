@@ -1,6 +1,7 @@
-import {expect, test} from '@playwright/test'
-import { HomePage } from '../../src/pages/HomePage'
-import { GaragePage } from '../../src/pages/GaragePage'
+import { test, expect } from '@playwright/test';
+import { HomePage } from '../src/pages/HomePage'
+import { GaragePage } from '../e2e/src/pages/GaragePage.ts'
+
 
 test.describe('Check add car model pop-up', ()=>{
 

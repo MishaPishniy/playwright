@@ -3,6 +3,7 @@ import { BasePage } from './BasePage';
 import { SideBarComponent } from '../components/SideBarComponent';
 
 export class GaragePage extends BasePage {
+  [x: string]: any;
 
   private readonly _addCarBtn: Locator
   private readonly _addCarModal: Locator

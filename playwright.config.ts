@@ -1,4 +1,4 @@
-import { defineConfig, devices } from '@playwright/test';
+import { defineConfig, devices } from "@playwright/test";
 
 /**
  * Read environment variables from file.
@@ -10,31 +10,31 @@ import { defineConfig, devices } from '@playwright/test';
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  testDir: './e2e',
+  testDir: "./tests",
   fullyParallel: false,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
-  reporter: 'html',
-  globalSetup: 'global-setup.ts',
-  globalTeardown: 'global-setup.ts',
-  testMatch: '**.spec.ts',
+  reporter: "html",
+  globalSetup: "global-setup.ts",
+  globalTeardown: "global-setup.ts",
+  testMatch: "**.spec.ts",
   use: {
     headless: false,
-    baseURL: 'https://qauto.forstudy.space/',
+    baseURL: "https://qauto.forstudy.space/",
     httpCredentials: {
-      username: 'guest',
-      password: 'welcome2qauto'
+      username: "guest",
+      password: "welcome2qauto",
     },
-    trace: 'on',
-    testIdAttribute: 'qa-dont-touch'
+    trace: "on",
+    testIdAttribute: "qa-dont-touch",
   },
   projects: [
     {
-      name: 'qauto',
-      testMatch: '**.spec.ts',
-      use: {...devices['Desktop Chrome']}
-    }
+      name: "qauto",
+      testMatch: "**.spec.ts",
+      use: { ...devices["Desktop Chrome"] },
+    },
   ],
 
   /* Run your local dev server before starting the tests */
