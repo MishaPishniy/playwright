@@ -1,46 +1,46 @@
-import { ReporterDescription } from "@playwright/test";
+import { defineConfig, devices } from '@playwright/test';
 
-// @ts-check
-const { defineConfig, devices } = require("@playwright/test");
-require("dotenv").config();
+/**
+ * Read environment variables from file.
+ * https://github.com/motdotla/dotenv
+ */
+// require('dotenv').config();
 
-const reporters: ReporterDescription[] = [["html", { open: "never" }]];
-if (process.env.UPLOAD_TEST_RESULT === "YES") {
-  reporters.push([
-    "monocart-reporter",
-    {
-      name: "My Test Report",
-      outputFile: "./monocart-report/index.html",
-    },
-  ]);
-}
-
-module.exports = defineConfig({
-  testDir: "./e2e",
-  timeout: 60000,
-  retries: 0,
+/**
+ * See https://playwright.dev/docs/test-configuration.
+ */
+export default defineConfig({
+  testDir: './e2e',
   fullyParallel: false,
-
-  reporter: "./custom-reporter.ts",
-
+  forbidOnly: !!process.env.CI,
+  retries: process.env.CI ? 2 : 0,
+  workers: process.env.CI ? 1 : undefined,
+  reporter: 'html',
+  globalSetup: 'global-setup.ts',
+  globalTeardown: 'global-setup.ts',
+  testMatch: '**.spec.ts',
   use: {
-    baseURL: "http://google.com",
-    headless: true,
-    trace: "retain-on-failure",
+    headless: false,
+    baseURL: 'https://qauto.forstudy.space/',
+    httpCredentials: {
+      username: 'guest',
+      password: 'welcome2qauto'
+    },
+    trace: 'on',
+    testIdAttribute: 'qa-dont-touch'
   },
-  /* Configure projects for major browsers */
   projects: [
     {
-      name: "example",
-      testMatch: "./spec",
-      use: {
-        headless: false,
-        ...devices["Desktop Firefox"],
-      },
-    },
-    {
-      name: "firefox",
-      use: { ...devices["Desktop Firefox"] },
-    },
+      name: 'qauto',
+      testMatch: '**.spec.ts',
+      use: {...devices['Desktop Chrome']}
+    }
   ],
+
+  /* Run your local dev server before starting the tests */
+  // webServer: {
+  //   command: 'npm run start',
+  //   url: 'http://127.0.0.1:3000',
+  //   reuseExistingServer: !process.env.CI,
+  // },
 });
