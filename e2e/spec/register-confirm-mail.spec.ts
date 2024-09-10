@@ -18,7 +18,7 @@ test("Check confirmation email", async ({ page }) => {
   });
 
   await test.step("Check registration email", async () => {
-    const options = {   //Оголошуємо options, де визначаємо запит до API для отримання листів на тимчасову поштову скриньку (використовуємо MD5 хеш email).
+    const options = {   //Оголошуємо options, де визначаємо запит до API для отримання листів на тимчасову поштову скриньку (використовуємо MD5 хеш email). Це код представлений з апі
       method: "GET",   
       url: `https://privatix-temp-mail-v1.p.rapidapi.com/request/mail/id/${md5}/`,
       headers: {
@@ -35,6 +35,9 @@ test("Check confirmation email", async ({ page }) => {
       console.log(response.data); // Логуємо відповідь у консоль.
       counter++;
     } while (response.data.error && counter < 5);
+
+    // Починається цикл do-while, в якому програма перевіряє наявність листа кожні 2 секунди.
+//Якщо у відповіді є помилка (response.data.error), тест повторює запит до 5 разів (всього 10 секунд).
 
     expect(response.data.length).toBeGreaterThan(0);
     const registrationEmail = response.data[0]; // Перевіряємо, що листи є (довжина масиву має бути більше 0).
